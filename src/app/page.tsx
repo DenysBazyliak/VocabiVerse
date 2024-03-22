@@ -2,8 +2,8 @@
 
 export default function Home() {
   return (
-    <main className="w-full bg-gray-300">
-      <div className="border-2 border-sky-600 text-center p-4">white</div>
+    <main className="h-svh w-screen flex justify-center items-center bg-gray-300">
+      <h1>You are on home page</h1>
     </main>
   );
 }
