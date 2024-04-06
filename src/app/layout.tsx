@@ -6,7 +6,7 @@ import "./globals.css";
 // Project Imports
 import Header from '../layout/MainLayout/Header'
 import Drawer from '@/layout/MainLayout/Drawer';
-import CHeader from '../_components/CHeader'
+import CHeader from '../layout/CommonLayout/CHeader'
 
 const inter = Inter({ subsets: ["latin"] });
 
