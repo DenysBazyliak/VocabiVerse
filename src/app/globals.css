@@ -28,10 +28,13 @@
     @apply 
     flex items-center justify-evenly
     w-[100%] px-[12px] py-2 
-    border-r-8 border-blue-500
     transform hover:bg-[#e6f4ff] 
     transition-all duration-300 ease-linear
     cursor-pointer
+  }
+  .active {
+    @apply 
+    border-r-[1px] border-r-blue-500 bg-[#e6f4ff]
   }
 }
 
