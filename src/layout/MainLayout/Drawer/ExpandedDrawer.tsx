@@ -15,6 +15,7 @@ import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 
 // Internal Imports
 import Dictionary from '../../../../public/images/book.png'
+import DrawerContent from './DrawerContent/DrawerContent'
 
 // Types
 // type ExpandedDrawerProps = {
@@ -24,26 +25,14 @@ import Dictionary from '../../../../public/images/book.png'
 function ExpandedDrawer() {
     const pathname = usePathname()
     return (
-        <nav className={`fixed top-0 left-0 h-screen w-[200px] mr-[60px] flex flex-col bg-white gap-y-2 border-r-[1px] `}>
+        <nav className={`fixed top-0 left-0 h-screen w-[260px] mr-[60px] flex flex-col bg-white gap-y-2 border-r-[1px] `}>
             <div className={'relative flex items-center justify-center h-12 w-12 mt-2 mb-2 mx-auto cursor-pointer'}>
                 <Image src={Dictionary} width={300} height={300} alt={'dictionary'} />
             </div>
             <div className={`flex flex-col justify-space-around items-center h-[calc(100vh-200px)]`}>
-
-                <Link href='/dictionary' className={`${pathname === '/' ? 'drawer-button active' : 'drawer-button'}`}>
-                    <div><MenuBookIcon /></div>
-                    <span>Home</span>
-                </Link>
-                <Link href='/dictionary' className={'drawer-button'}>
-                    <div><StarBorderIcon /></div>
-                    <span>Favorite</span>
-                </Link>
-                <Link href='/dictionary' className={'drawer-button'}>
-                    <div><ReplyIcon /></div>
-                    <span>About</span>
-                </Link>
+                <DrawerContent pathname={pathname}/>
             </div> 
-            <Link href='/dictionary' className={'drawer-button'}>
+            <Link href='/dictionary' className={'drawer-item'}>
                     <div><ExitToAppIcon /></div>
                     <span>Exit</span>
                 </Link>
