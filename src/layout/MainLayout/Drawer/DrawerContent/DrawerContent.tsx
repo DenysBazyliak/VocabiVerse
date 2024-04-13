@@ -1,38 +1,40 @@
 import React from 'react'
-import Link from 'next/link';
 
 // Mui Icons
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import ReplyIcon from '@mui/icons-material/Reply';
 
+// Internal Imports
+import DrawerItem from './DrawerItem'
+
 type DrawerContentProps= {
-    pathname:string
+    pathname:string,
+    rotate:boolean
 }
 const content= [
     {
         name: 'Home',
-        pathname:'/home',
+        linkEnd:'/',
         icon:<MenuBookIcon className={'w-[20px] mr-2'}/>
     },
     {
         name: 'Favorite',
-        pathname:'/favorite',
+        linkEnd:'/favorite',
         icon:<StarBorderIcon className={'w-[20px] mr-2'}/>
     },
     {
         name: 'About',
-        pathname:'/about',
+        linkEnd:'/about',
         icon:<ReplyIcon className={'w-[20px] mr-2'}/>
     }
 ]
 
-function DrawerContent({pathname}:DrawerContentProps) {
+function DrawerContent({pathname,rotate}:DrawerContentProps) {
     return content.map((item)=> (
-        <Link href={item.pathname} className={'drawer-link'} key={item.name}>
-            <div className={`${pathname === item.pathname ? 'drawer-item active border-r-2 border-r-[#0b71ff] ' : 'drawer-item'}`}>{item.icon} <span>{item.name}</span></div>
-                </Link>
+        <DrawerItem key={item.name} name={item.name} linkEnd={item.linkEnd} icon={item.icon} pathname={pathname} rotate={rotate} />
     ))
 }
+
 
 export default DrawerContent
