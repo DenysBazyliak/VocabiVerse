@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 
 // Mui Icons
@@ -16,13 +16,13 @@ type HeaderProps = {
 function Header({ rotate, setRotate }: HeaderProps) {
     return (
         <header
-            className={` absolute top-0 right-0 px-4 flex justify-between items-center ${ rotate ? 'w-[calc(100%-260px)]':"w-[calc(100%-60px)]"}  h-[60px] border-b-2 bg-[#ffffff] transition-all duration-300 ease-linear`}>
-            <button className={`drawer-icon ${rotate ? '' : 'rotate-180'}`} onClick={() => {
+            className={` absolute top-0 right-0 px-4 flex justify-between items-center ${ rotate ? 'w-[calc(100%-260px)]':"w-[calc(100%-60px)]"}  h-[60px] border-b-2 bg-[#ffffff] transition-all duration-200 ease-in`}>
+            <button className={`${rotate ? '' : 'rotate-180'}`} onClick={() => {
                 console.log(rotate);
                 return setRotate(!rotate);
             }}>
 
-                <FirstPageIcon />
+                <FirstPageIcon className={'expand-icon '} />
             </button>
             <div className='relative flex justify-between w-[160px] mr-6'>
 

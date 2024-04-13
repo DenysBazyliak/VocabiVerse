@@ -4,6 +4,7 @@ import React from 'react'
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import ReplyIcon from '@mui/icons-material/Reply';
+import HomeIcon from '@mui/icons-material/Home';
 
 // Internal Imports
 import DrawerItem from './DrawerItem'
@@ -16,6 +17,11 @@ const content= [
     {
         name: 'Home',
         linkEnd:'/',
+        icon:<HomeIcon className={'w-[20px] mr-2'}/>
+    },
+    {
+        name: 'Dictionary',
+        linkEnd:'/dictionary',
         icon:<MenuBookIcon className={'w-[20px] mr-2'}/>
     },
     {
@@ -27,7 +33,9 @@ const content= [
         name: 'About',
         linkEnd:'/about',
         icon:<ReplyIcon className={'w-[20px] mr-2'}/>
-    }
+    },
+    
+    
 ]
 
 function DrawerContent({pathname,rotate}:DrawerContentProps) {

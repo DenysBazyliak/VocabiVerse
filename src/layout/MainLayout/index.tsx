@@ -1,6 +1,6 @@
 'use client'
 // Project Imports
-import Drawer from './Drawer/ExpandedDrawer'
+import Drawer from './Drawer'
 import Header from './Header'
 import { useState } from 'react';
 
