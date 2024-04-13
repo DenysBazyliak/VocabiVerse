@@ -9,17 +9,17 @@ import SettingsIcon from '@mui/icons-material/Settings';
 
 // Types
 type HeaderProps = {
-    expand: boolean,
-    setExpand: React.Dispatch<React.SetStateAction<boolean>>
+    rotate: boolean,
+    setRotate: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-function Header({ expand, setExpand }: HeaderProps) {
+function Header({ rotate, setRotate }: HeaderProps) {
     return (
         <header
-            className={` absolute top-0 right-0 px-4 flex justify-between items-center ${ expand?'w-[calc(100%-260px)]':"w-[calc(100%-60px)]"}  h-[60px] border-b-2 bg-[#ffffff]`}>
-            <button className={`drawer-icon ${expand ? 'rotate-180' : ''}`} onClick={() => {
-                console.log(expand);
-                return setExpand(!expand);
+            className={` absolute top-0 right-0 px-4 flex justify-between items-center ${ rotate ? 'w-[calc(100%-260px)]':"w-[calc(100%-60px)]"}  h-[60px] border-b-2 bg-[#ffffff] transition-all duration-300 ease-linear`}>
+            <button className={`drawer-icon ${rotate ? '' : 'rotate-180'}`} onClick={() => {
+                console.log(rotate);
+                return setRotate(!rotate);
             }}>
 
                 <FirstPageIcon />

@@ -20,7 +20,7 @@ import Dictionary from '../../../../public/images/book.png'
 
 function CollapsedDrawer() {
     return (
-        <nav className={`fixed top-0 left-0 h-screen  w-[60px] mr-[60px] flex flex-col bg-white gap-y-2 border-r-[1px] `}>
+        <nav className={`fixed top-0 left-0 h-screen  w-[60px] mr-[60px] flex flex-col bg-white gap-y-2 border-r-[1px] transition-all duration-300 ease-linear`}>
             <div className={'relative flex items-center justify-center h-12 w-12 mt-2 mb-2 mx-auto cursor-pointer'}>
             <Image src={Dictionary} width={300} height={300} alt={'dictionary'} />
             </div>

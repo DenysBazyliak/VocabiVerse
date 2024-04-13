@@ -1,15 +1,15 @@
 'use client'
 // Project Imports
-import Drawer from './Drawer/index'
+import Drawer from './Drawer/ExpandedDrawer'
 import Header from './Header'
 import { useState } from 'react';
 
 function MainLayout(){
-    const [expand, setExpand] = useState<boolean>(false)
+    const [rotate, setRotate] = useState<boolean>(false)
     return (
         <>
-            <Drawer expand={expand}/>
-            <Header expand={expand} setExpand={setExpand}/>
+            <Drawer rotate={rotate}/>
+            <Header rotate={rotate} setRotate={setRotate}/>
         </>
     )
 }

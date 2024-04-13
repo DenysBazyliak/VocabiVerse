@@ -4,11 +4,13 @@ import ExpandedDrawer from "./ExpandedDrawer"
 import CollapsedDrawer from "./CollapsedDrawer" 
 
 type DrawerProps = {
-    expand: boolean,
+    rotate: boolean,
 }
 
-function Drawer({expand}: DrawerProps){
-    return expand ? (<ExpandedDrawer/>) : (<CollapsedDrawer/>)
+function Drawer({rotate}: DrawerProps){
+    return (
+        <div className="transition-all duration-300 ease-linear ">{rotate ? (<ExpandedDrawer rotate={rotate}/>) : (<CollapsedDrawer/>)}</div>
+)
 }
 
 export default Drawer
