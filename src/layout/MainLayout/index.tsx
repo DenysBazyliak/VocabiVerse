@@ -1,7 +1,7 @@
 'use client'
 // Project Imports
 import Drawer from './Drawer'
-import Header from './Header'
+import Header from './Header/Header'
 import { useState } from 'react';
 
 function MainLayout(){

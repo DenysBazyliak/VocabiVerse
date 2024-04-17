@@ -7,7 +7,7 @@ import ReplyIcon from '@mui/icons-material/Reply';
 import HomeIcon from '@mui/icons-material/Home';
 
 // Internal Imports
-import DrawerItem from './DrawerItem'
+import DrawerLink from '../../../../_components/DrawerLink'
 
 type DrawerContentProps= {
     pathname:string,
@@ -16,23 +16,23 @@ type DrawerContentProps= {
 const content= [
     {
         name: 'Home',
-        linkEnd:'/',
-        icon:<HomeIcon className={'w-[20px] mr-2'}/>
+        link:'/',
+        icon:<HomeIcon className={'w-[20px]'}/>
     },
     {
         name: 'Dictionary',
-        linkEnd:'/dictionary',
-        icon:<MenuBookIcon className={'w-[20px] mr-2'}/>
+        link:'/dictionary',
+        icon:<MenuBookIcon className={'w-[20px]'}/>
     },
     {
         name: 'Favorite',
-        linkEnd:'/favorite',
-        icon:<StarBorderIcon className={'w-[20px] mr-2'}/>
+        link:'/favorite',
+        icon:<StarBorderIcon className={'w-[20px]'}/>
     },
     {
         name: 'About',
-        linkEnd:'/about',
-        icon:<ReplyIcon className={'w-[20px] mr-2'}/>
+        link:'/about',
+        icon:<ReplyIcon className={'w-[20px]'}/>
     },
     
     
@@ -40,7 +40,7 @@ const content= [
 
 function DrawerContent({pathname,rotate}:DrawerContentProps) {
     return content.map((item)=> (
-        <DrawerItem key={item.name} name={item.name} linkEnd={item.linkEnd} icon={item.icon} pathname={pathname} rotate={rotate} />
+        <DrawerLink key={item.name} name={item.name} link={item.link} icon={item.icon} pathname={pathname} rotate={rotate} />
     ))
 }
 
