@@ -3,56 +3,62 @@
 @tailwind utilities;
 
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-@layer _components {
-  .drawer-icon {
-    @apply relative flex items-center justify-center
-    h-8 w-8 mt-2 mb-2 mx-auto py-[10px] px-[10px] rounded-xl
-    text-[#262626]
-    hover:bg-[#f5f5f5] hover:text-[#1976d2]
-    transition-all duration-300 ease-linear
-    cursor-pointer
-  }
-  .header-icon {
-    @apply relative flex items-center justify-center
-    h-8 w-8 mt-2 mb-2 mx-auto py-[10px] px-[10px] rounded-xl
-    text-[#66FCF1]
-    transition-all duration-300 ease-linear
-    cursor-pointer
-  }
-  .expand-icon {
-    @apply 
-    relative flex items-center justify-center   w-[20px]
-    rounded-xl
-    text-[#262626]
-    hover:bg-[#f5f5f5] hover:text-[#1976d2]
-    transition-all duration-300 ease-linear
-    cursor-pointer
-  }
-@layer layout{
-  .drawer-link{
-    @apply w-[100%] 
-  }
-  .drawer-item {
-    @apply flex items-center justify-start
-    px-[20px] py-3
-    hover:bg-[#e6f4ff] hover:border-2 hover:text-[#0b71ff]
-  
-    cursor-pointer
-  }
-  .active {
-    @apply bg-[#e6f4ff] text-[#0b71ff]
-  }
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
 }
 
-  /*.drawer-icon-tooltip {*/
-  /*  @apply absolute w-auto p-2 m-2 min-w-max left-14 rounded-md shadow-md*/
-  /*  text-white bg-gray-900*/
-  /*  text-xs font-bold*/
-  /*  transition-all duration-100 ease-linear origin-left*/
-  /*}*/
+@layer _components {
+    .drawer-icon {
+        @apply relative flex items-center justify-center
+        h-8 w-8 mt-2 mb-2 mx-auto py-[10px] px-[10px] rounded-xl
+        text-[#262626]
+        hover:bg-[#f5f5f5] hover:text-[#1976d2]
+        transition-all duration-300 ease-linear
+        cursor-pointer
+    }
+
+    .header-icon {
+        @apply relative flex items-center justify-center
+        h-8 w-8 mt-2 mb-2 mx-auto py-[10px] px-[10px] rounded-xl
+        text-[#66FCF1]
+        transition-all duration-300 ease-linear
+        cursor-pointer
+    }
+
+    .expand-icon {
+        @apply
+        relative flex items-center justify-center   w-[20px]
+        rounded-xl
+        text-[#262626]
+        hover:bg-[#f5f5f5] hover:text-[#1976d2]
+        transition-all duration-300 ease-linear
+        cursor-pointer
+    }
+
+    @layer layout {
+        .drawer-link {
+            @apply w-[100%]
+        }
+
+        .drawer-item {
+            @apply flex items-center justify-start
+            px-[20px] py-3
+            hover:bg-[#e6f4ff] hover:border-2 hover:text-[#0b71ff]
+
+            cursor-pointer
+        }
+
+        .active {
+            @apply bg-[#e6f4ff] text-[#0b71ff]
+        }
+    }
+
+    /*.drawer-icon-tooltip {*/
+    /*  @apply absolute w-auto p-2 m-2 min-w-max left-14 rounded-md shadow-md*/
+    /*  text-white bg-gray-900*/
+    /*  text-xs font-bold*/
+    /*  transition-all duration-100 ease-linear origin-left*/
+    /*}*/
 }
