@@ -1,6 +1,5 @@
-'use client'
-
-// Libraries
+// Library Imports
+import React from 'react';
 // import { useState } from 'react';
 
 // Project Imports
@@ -8,15 +7,19 @@ import Drawer from './Drawer'
 import Header from './Header/Header'
 import Footer from './Footer'
 
+type MainLayoutProps = {
+    setForm: React.Dispatch<React.SetStateAction<boolean>>
+    form: boolean
+}
 
 
-function MainLayout(){
+function MainLayout({setForm, form}:MainLayoutProps) {
     // const [rotate, setRotate] = useState<boolean>(false)
     return (
         <>
             {/* <Drawer rotate={rotate}/> */}
             <Header />
-            <Footer/>  
+            <Footer setForm={setForm} form={form}/>
         </>
     )
 }
