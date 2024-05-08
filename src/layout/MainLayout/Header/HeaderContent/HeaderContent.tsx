@@ -8,8 +8,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import HeaderLink from '../../../../_components/HeaderLink'
 
 type HeaderContentProps= {
-    pathname:string,
-    rotate:boolean
+    pathname:string
 }
 const content= [
     {

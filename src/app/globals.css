@@ -20,8 +20,7 @@
   .header-icon {
     @apply relative flex items-center justify-center
     h-8 w-8 mt-2 mb-2 mx-auto py-[10px] px-[10px] rounded-xl
-    text-[#262626] bg-[#f5f5f5]
-    hover:bg-[#f5f5f5] hover:text-[#1976d2]
+    text-[#66FCF1]
     transition-all duration-300 ease-linear
     cursor-pointer
   }

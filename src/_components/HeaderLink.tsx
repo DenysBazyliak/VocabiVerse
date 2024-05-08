@@ -8,7 +8,7 @@ type HeaderLinkProps={
 }
 function HeaderLink({ link, icon, pathname}:HeaderLinkProps) {
     return (
-        <Link href={pathname} className={'drawer-link'} key={link}>
+        <Link href={link} className={'drawer-link'} key={link}>
             <div className={'header-icon'}>{icon}</div>
         </Link>
     )

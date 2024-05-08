@@ -25,7 +25,7 @@ type DrawerProps = {
 function Drawer({rotate}:DrawerProps) {
     const pathname = usePathname()
     return (
-        <nav className={`fixed top-0 left-0 h-screen ${rotate ? 'w-[260px]': 'w-[60px]'} mr-[60px] flex flex-col bg-white gap-y-2 border-r-[1px] transition-all duration-200 ease-in`}>
+        <nav className={`z-10 fixed top-0 left-0 h-screen ${rotate ? 'w-[260px]': 'w-[60px]'} mr-[60px] flex flex-col bg-white gap-y-2 border-r-[1px] transition-all duration-200 ease-in`}>
             <div className={'relative flex items-center justify-center h-12 w-12 mt-2 mb-2 mx-auto cursor-pointer'}>
                 <Image src={Dictionary} width={300} height={300} alt={'dictionary'} /> {rotate ? (<span>VocabiVerse</span>):""}
             </div>

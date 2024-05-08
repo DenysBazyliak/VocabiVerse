@@ -1,15 +1,22 @@
 'use client'
+
+// Libraries
+// import { useState } from 'react';
+
 // Project Imports
 import Drawer from './Drawer'
 import Header from './Header/Header'
-import { useState } from 'react';
+import Footer from './Footer'
+
+
 
 function MainLayout(){
-    const [rotate, setRotate] = useState<boolean>(false)
+    // const [rotate, setRotate] = useState<boolean>(false)
     return (
         <>
-            <Drawer rotate={rotate}/>
-            <Header rotate={rotate} setRotate={setRotate}/>
+            {/* <Drawer rotate={rotate}/> */}
+            <Header />
+            <Footer/>  
         </>
     )
 }
