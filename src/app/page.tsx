@@ -1,4 +1,3 @@
-
 const WordsArray = [
   {
     word: 'Dictionary',
@@ -6,18 +5,18 @@ const WordsArray = [
 
   },
   {
-    word: 'Dictionary',
-    translation: 'das Wörterbuch'
+    word: 'Sock',
+    translation: 'die Socke'
 
   },
   {
-    word: 'Dictionary',
-    translation: 'das Wörterbuch'
+    word: 'Gauntlet',
+    translation: 'die Stulpe'
 
   },
   {
-    word: 'Dictionary',
-    translation: 'das Wörterbuch'
+    word: 'Boot',
+    translation: 'der Stiefel'
 
   }
 ]
