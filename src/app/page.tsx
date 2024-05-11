@@ -48,7 +48,7 @@ const Buttons = ()=>{
 }
 export default function Dictionary() {
   return (
-    <main className={''}>
+    <main className={'w-[calc(100vw-260px)] fixed right-0 '}>
       <p className={'mt-12 ml-16 text-[#66FCF1] text-5xl'} >DICTIONARY</p>
       <div className={'flex flex-row mt-4'}>
         <span className={'pl-2 border-b-[1.3px] w-[67px] border-[#45A29E] pb-1'}></span>

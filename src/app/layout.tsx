@@ -1,13 +1,15 @@
 'use client';
 
 // Library Imports
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 // Project Imports
 // import CommonLayout from '../layout/CommonLayout/index';
 import MainLayout from '@/layout/MainLayout';
 import './globals.css';
 import WordForm from '@/_components/WordForm';
+import Grid from '../../public/images/grid.jpg';
+import SectionGroup from '@/_components/Dictionary/SectionGroup';
 
 
 // const logged = false;
@@ -16,12 +18,16 @@ import WordForm from '@/_components/WordForm';
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
     const [form, setForm] = useState<boolean>(false);
     return (
-        <html lang='en'>
-        <body className={'h-full'}>
+        <html lang='en' >
+        <body className={'h-full bg-gradient-to-r from-[#DA4453] to-[#89216B]'} >
+        <div className={'main h-4 w-4'}>
+
+        </div>
             <MainLayout setForm={setForm} form={form} />
-            <div className={'absolute bottom-0 right-0 h-[calc(100%-60px)] w-[100%] bg-[#0B0C10]'}>
+            <div className={'absolute bottom-0 right-0 h-[calc(100%-60px)] w-[100%]'}>
                 {children}
                 {form ? <WordForm form={form} setForm={setForm} /> : null}
+                <SectionGroup/>
             </div>
         </body>
         </html>

@@ -9,6 +9,10 @@
     text-align: center;
 }
 
+
+.main{
+    background-image: -moz-linear-gradient(0deg, #DA4453 0%, #89216B 100%);
+}
 @layer _components {
     .drawer-icon {
         @apply relative flex items-center justify-center
