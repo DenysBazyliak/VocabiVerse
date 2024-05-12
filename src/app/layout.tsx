@@ -9,7 +9,7 @@ import MainLayout from '@/layout/MainLayout';
 import './globals.css';
 import WordForm from '@/_components/WordForm';
 import Grid from '../../public/images/grid.jpg';
-import SectionGroup from '@/_components/Dictionary/SectionGroup';
+import SectionPaper from '@/_components/Dictionary/SectionPaper';
 
 
 // const logged = false;
@@ -17,6 +17,7 @@ import SectionGroup from '@/_components/Dictionary/SectionGroup';
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
     const [form, setForm] = useState<boolean>(false);
+    const [section, setSection] = useState<boolean>(true);
     return (
         <html lang='en' >
         <body className={'h-full bg-gradient-to-r from-[#DA4453] to-[#89216B]'} >
@@ -27,7 +28,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <div className={'absolute bottom-0 right-0 h-[calc(100%-60px)] w-[100%]'}>
                 {children}
                 {form ? <WordForm form={form} setForm={setForm} /> : null}
-                <SectionGroup/>
+                {section ?  <SectionPaper setSection={setSection}/> : <button onClick={() => setSection(true)}> + </button>}
+
             </div>
         </body>
         </html>
