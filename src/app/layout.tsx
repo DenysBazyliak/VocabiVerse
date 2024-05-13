@@ -9,7 +9,7 @@ import MainLayout from '@/layout/MainLayout';
 import './globals.css';
 import WordForm from '@/_components/WordForm';
 import Grid from '../../public/images/grid.jpg';
-import SectionPaper from '@/_components/Dictionary/SectionPaper';
+import SectionPaper from '@/_components/Sections/SectionPaper/SectionPaper';
 
 
 // const logged = false;
