@@ -41,11 +41,9 @@
         cursor-pointer
     }
 
-    .section-paper {
+    .on-close {
         @apply
-        fixed left-0 top-0 my-20 mx-4 px-4 w-[260px] h-[450px]
-        bg-black rounded-3xl
-        grid grid-cols-10 grid-rows-12 gap-4
+        transition-all duration-300 ease-in-out hover:translate-y-1 scale-110
     }
 
     .section-group {
@@ -55,27 +53,13 @@
         flex flex-col items-center justify-start
     }
 
-    .section {
-        @apply
-        h-6 w-[100%] mb-4
-        text-black
-        rounded-3xl
-        flex items-center justify-center
-        cursor-pointer
-    }
-
-    .section-divider-wrapper {
-        @apply
-        grid grid-rows-subgrid col-span-1 row-span-10
-    }
-
     .section-divider {
         @apply
         row-start-4 row-end-10
         h-[100%] w-[1px] p-1
         flex items-center justify-center
-        bg-[#45A29E] hover:bg-[#66FCF1]
-        transition-all duration-150 ease-linear
+        bg-[#45A29E]
+        transition-all duration-150 ease-linear hover:bg-[#66FCF1]
         rounded-3xl
     }
 
