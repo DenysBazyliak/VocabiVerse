@@ -10,7 +10,6 @@ type ButtonComponentProps = {
 function ButtonComponent({rotate, setRotate, icon}:ButtonComponentProps) {
   return (
     <button className={`${rotate ? '' : 'rotate-180'}`} onClick={() => {
-      console.log(rotate);
       return setRotate(!rotate);
   }}>
       {icon}

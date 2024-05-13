@@ -1,8 +1,10 @@
+'use client'
+
 // Libraries
-import React from 'react';
+import React, { useState } from 'react';
 
 // Project Imports
-import SectionClosingTag from '@/_components/Sections/SectionPaper/SectionClosingTag';
+import SectionContractingTag from '@/_components/Sections/SectionPaper/SectionContractingTag';
 import SectionFooter from '@/_components/Sections/SectionPaper/SectionFooter';
 import SectionGroup from '@/_components/Sections/SectionPaper/SectionGroup/SectionGroup';
 
@@ -12,11 +14,12 @@ type SectionGroupProps = {
 }
 
 const SectionPaper = ({ setSection }: SectionGroupProps) => {
+    const [contracted, setContracted] = useState(false)
     return (
         <>
-            <div className={'section-paper'}>
+            <div className={`fixed left-0 top-0 my-20 mx-4 px-4 w-[260px] h-[450px] bg-black rounded-3xl grid grid-cols-10 grid-rows-12 gap-4 transition-all duration-300 ease-in-out ${contracted ? 'left-[-238px]' : 'w-[260px]'}`}>
                 <SectionGroup />
-                <SectionClosingTag setSection={setSection}/>
+                <SectionContractingTag contracted={contracted} setContracted={setContracted}/>
                 <SectionFooter />
             </div>
 

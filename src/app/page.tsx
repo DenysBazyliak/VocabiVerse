@@ -31,7 +31,7 @@ const ButtonsArray = [
 const Words = ()=>{
   return WordsArray.map((word)=>{
     return (
-      <div key={word.word} className={' mr-6 my-4 px-6 py-4 w-[260px] h-[100px] rounded-md flex flex-col items-center justify-center bg-[#0b0c10] text-[#c5c6c7] border border-[#45A29E]'}>
+      <div key={word.word} className={' mr-6 my-4 px-6 py-4 w-[260px] h-[100px] rounded-md flex flex-col items-center justify-center bg-[#0b0c10] text-[#c5c6c7] border border-[#45A29E] transition-all duration-300 ease-in-out hover:translate-y-1 hover:scale-110'}>
         <span>Word: {word.word}</span>
         <span className={'truncate'}>Translation: {word.translation}</span>
       </div>
