@@ -24,7 +24,6 @@ function Header() {
         return (
         <header className={`z-10 absolute top-0 right-0 px-4 flex justify-end items-center w-[100%] h-[60px]  bg-[#0B0C10] transition-all duration-200 ease-in`}>
             {/* <ButtonComponent rotate={rotate} setRotate={setRotate} icon={<FirstPageIcon className={'expand-icon'}/>} /> */}
-            {/* <Image src={Dictionary} width={50} height={50} alt={'dictionary'} className={'cursor-pointer'} /> */}
             <div className='relative flex justify-end w-[160px] mr-6'>
             
                 <HeaderContent pathname={pathname} />
