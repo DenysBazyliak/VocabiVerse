@@ -75,7 +75,10 @@
         @apply
         flex items-center justify-center
     }
-
+    .word-form-input{
+        @apply
+        w-[80%] p-2 text-center border border-[#45A29E] rounded-3xl text-[#45A29E]
+    }
     .blue-gradient {
         @apply
         bg-gradient-to-r from-[#9CECFB] via-[#65C7F7] to-[#0052D4]
