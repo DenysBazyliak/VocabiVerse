@@ -7,18 +7,12 @@ import React, { useState, useReducer } from 'react';
 import MainLayout from '@/layout/MainLayout';
 import './globals.css';
 import WordForm from '@/_components/WordForm';
-import Grid from '../../public/images/grid.jpg';
 import SectionPaper from '@/_components/Sections/SectionPaper/SectionPaper';
-import { wordsReducer } from '@/_components/reducers/wordsReducer';
-
+import { wordsReducer } from '@/reducers/wordsReducer';
+import { WordsContext, WordsDispatchContext } from '@/contexts/WordsContext';
 
 // Types
-type Word = {
-    word: string;
-    translation: string;
-    id: number;
-}
-
+import { WordType} from '@/types/WordTypes';
 
 const InitialWords = [
     {
@@ -47,9 +41,9 @@ const InitialWords = [
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
     const [form, setForm] = useState<boolean>(false);
     const [section, setSection] = useState<boolean>(true);
-    const [words, dispatch] = useReducer(wordsReducer, InitialWords);
+    const [words, dispatch] = useReducer(wordsReducer, InitialWords)
 
-    function handleAddWord(word: Word) {
+    function handleAddWord(word: WordType) {
         dispatch({
             type: 'added',
             id: nextId++,
@@ -57,7 +51,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         });
     }
 
-    function handleChangeWord(word: Word) {
+    function handleChangeWord(word: WordType) {
         dispatch({
             type: 'changed',
             word,
@@ -79,13 +73,18 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <body className={'h-full bg-gradient-to-r from-[#DA4453] to-[#89216B]'}>
         <div className={'main h-4 w-4'}>
         </div>
-        <MainLayout setForm={setForm} form={form} />
-        <div className={'absolute bottom-0 right-0 h-[calc(100%-60px)] w-[100%]'}>
-            {children}
-            {form ? <WordForm form={form} setForm={setForm} /> : null}
-            {section ? <SectionPaper setSection={setSection} /> : <button onClick={() => setSection(true)}> + </button>}
+        <WordsContext.Provider value={words}>
+            <WordsDispatchContext.Provider value={dispatch}>
+                <MainLayout setForm={setForm} form={form} />
+                <div className={'absolute bottom-0 right-0 h-[calc(100%-60px)] w-[100%]'}>
+                    {children}
+                    {form ? <WordForm form={form} setForm={setForm} /> : null}
+                    {section ? <SectionPaper setSection={setSection} /> :
+                        <button onClick={() => setSection(true)}> + </button>}
 
-        </div>
+                </div>
+            </WordsDispatchContext.Provider>
+        </WordsContext.Provider>
         </body>
         </html>
     );
