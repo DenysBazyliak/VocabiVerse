@@ -49,7 +49,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     const [section, setSection] = useState<boolean>(true);
     const [words, dispatch] = useReducer(wordsReducer, InitialWords);
 
-    function handleAddTask(word: Word) {
+    function handleAddWord(word: Word) {
         dispatch({
             type: 'added',
             id: nextId++,
@@ -57,14 +57,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         });
     }
 
-    function handleChangeTask(word: Word) {
+    function handleChangeWord(word: Word) {
         dispatch({
             type: 'changed',
             word,
         });
     }
 
-    function handleDeleteTask(wordId: number) {
+    function handleDeleteWord(wordId: number) {
         dispatch({
             type: 'deleted',
             id: wordId,
