@@ -1,6 +1,7 @@
 // Library Imports
 import { useForm, SubmitHandler } from 'react-hook-form';
-import React from 'react';
+import React, { useContext } from 'react';
+import { WordsDispatchContext } from '@/contexts/WordsContext';
 
 type Inputs = {
     example: string
@@ -14,22 +15,30 @@ type WordFormProps = {
 const Attributes = [
     {
         attribute: 'der',
-    }, 
+    },
     {
         attribute: 'die',
-    }, 
+    },
     {
         attribute: 'das',
     },
 ];
-
+let nextId = 5;
 const WordForm = ({ form, setForm }: WordFormProps) => {
+    const dispatch = useContext(WordsDispatchContext);
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm<Inputs>();
-    const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+    const onSubmit: SubmitHandler<Inputs> = (data) =>{
+        dispatch({
+            type: 'added',
+            id: nextId++,
+            word: data,
+        });
+        setForm(!form)
+    }
     return (
         <div
             className={' absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] z-60 h-[300px] flex flex-col justify-center items-center bg-gradient-to-r from-[#0b0c10] to-[#1f2833] rounded-3xl  '}>
@@ -43,9 +52,10 @@ const WordForm = ({ form, setForm }: WordFormProps) => {
                 <div className={'w-full flex flex-row justify-evenly'}>
                     {Attributes.map((attribute) => (
                         <label key={attribute.attribute} htmlFor={attribute.attribute}
-                               className={'flex items-center justify-between w-[15%] text-[#45A29E]'}><input name={'radio'}
-                                                                                                         type={'radio'}
-                                                                                                         value={attribute.attribute} />{attribute.attribute}</label>
+                               className={'flex items-center justify-between w-[15%] text-[#45A29E]'}><input
+                            name={'radio'}
+                            type={'radio'}
+                            value={attribute.attribute} />{attribute.attribute}</label>
                     ))}
                 </div>
                 <input type='submit' value={'Submit'}
