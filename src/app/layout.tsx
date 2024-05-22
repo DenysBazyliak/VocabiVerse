@@ -4,14 +4,13 @@
 import React, { useState, useReducer } from 'react';
 
 // Project Imports
-// import CommonLayout from '../layout/CommonLayout/index';
 import MainLayout from '@/layout/MainLayout';
 import './globals.css';
 import WordForm from '@/_components/WordForm';
 import Grid from '../../public/images/grid.jpg';
 import SectionPaper from '@/_components/Sections/SectionPaper/SectionPaper';
+import { wordsReducer } from '@/_components/reducers/wordsReducer';
 
-// const logged = false;
 
 // Types
 type Word = {
@@ -25,23 +24,23 @@ const InitialWords = [
     {
         word: 'Dictionary',
         translation: 'das Wörterbuch',
-        id: 1
+        id: 1,
 
     },
     {
         word: 'Sock',
         translation: 'die Socke',
-        id: 2
+        id: 2,
     },
     {
         word: 'Gauntlet',
         translation: 'die Stulpe',
-        id: 3
+        id: 3,
     },
     {
         word: 'Boot',
         translation: 'der Stiefel',
-        id: 4
+        id: 4,
     },
 ];
 
@@ -54,41 +53,25 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         dispatch({
             type: 'added',
             id: nextId++,
-            word
+            word,
         });
     }
 
     function handleChangeTask(word: Word) {
         dispatch({
             type: 'changed',
-            word
+            word,
         });
     }
 
-    function handleDeleteTask(wordId:number) {
+    function handleDeleteTask(wordId: number) {
         dispatch({
             type: 'deleted',
             id: wordId,
         });
     }
-    let nextId = 4;
-    function wordsReducer(words: any, action: any) {
-        switch (action.type) {
-            case 'add':
-                return [...words, {
-                    word: action.payload.word,
-                    translation: action.payload.translation,
-                    id: nextId++
-                }];
-            case 'changed':
-                return [...words, ]
-            case 'deleted':
-                return words.filter((word: Word) => word.id !== action.id);
-            default:
-                return words;
-        }
-    }
 
+    let nextId = 4;
 
 
     return (
