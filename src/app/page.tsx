@@ -1,3 +1,9 @@
+'use client'
+
+import { useContext } from 'react';
+import { WordsContext } from '@/contexts/WordsContext';
+import { WordType } from '@/types/WordTypes';
+
 const WordsArray = [
   {
     word: 'Dictionary',
@@ -29,9 +35,10 @@ const ButtonsArray = [
   },
 ]
 const Words = ()=>{
-  return WordsArray.map((word)=>{
+  const words: WordType[] = useContext(WordsContext)
+  return words.map((word)=>{
     return (
-      <div key={word.word} className={' mr-6 my-4 px-6 py-4 w-[260px] h-[100px] rounded-md flex flex-col items-center justify-center bg-[#0b0c10] text-[#c5c6c7] border border-[#45A29E] transition-all duration-300 ease-in-out hover:translate-y-1 hover:scale-110'}>
+      <div key={word.id} className={' mr-6 my-4 px-6 py-4 w-[260px] h-[100px] rounded-md flex flex-col items-center justify-center bg-[#0b0c10] text-[#c5c6c7] border border-[#45A29E] transition-all duration-300 ease-in-out hover:translate-y-1 hover:scale-110'}>
         <span>Word: {word.word}</span>
         <span className={'truncate'}>Translation: {word.translation}</span>
       </div>
@@ -47,6 +54,7 @@ const Buttons = ()=>{
   })
 }
 export default function Dictionary() {
+  ;
   return (
     <main className={'w-[calc(100vw-260px)] fixed right-0 '}>
       <p className={'mt-12 ml-16 text-[#66FCF1] text-5xl'} >DICTIONARY</p>
@@ -55,7 +63,7 @@ export default function Dictionary() {
         <Buttons/>
         <button className={' border-b-[1.3px] border-[#45A29E] text-[#66FCF1] pr-1'}>+</button>
       </div>
-      <div className={'flex flex-row px-[67px]'}>
+      <div className={'flex flex-row px-[67px] flex-wrap'}>
         <Words/>
       </div>
     </main>
