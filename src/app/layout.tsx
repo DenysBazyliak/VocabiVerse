@@ -17,23 +17,27 @@ import { WordType} from '@/types/WordTypes';
 const InitialWords = [
     {
         word: 'Dictionary',
-        translation: 'das Wörterbuch',
+        translation: 'Wörterbuch',
+        article:'das',
         id: 1,
 
     },
     {
         word: 'Sock',
-        translation: 'die Socke',
+        translation: 'Socke',
+        article:'die',
         id: 2,
     },
     {
         word: 'Gauntlet',
-        translation: 'die Stulpe',
+        translation: 'Stulpe',
+        article:'die',
         id: 3,
     },
     {
         word: 'Boot',
-        translation: 'der Stiefel',
+        translation: 'Stiefel',
+        article:'der',
         id: 4,
     },
 ];

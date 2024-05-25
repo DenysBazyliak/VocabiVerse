@@ -6,7 +6,7 @@ import { WordsDispatchContext } from '@/contexts/WordsContext';
 type Inputs = {
     word: string
     translation: string
-    attribute: string
+    article: string
 }
 type WordFormProps = {
     form: boolean,
@@ -21,7 +21,7 @@ const WordForm = ({ form, setForm }: WordFormProps) => {
         handleSubmit,
         formState: { errors },
     } = useForm<Inputs>();
-    const onSubmit: SubmitHandler<Inputs> = (data) => { 
+    const onSubmit: SubmitHandler<Inputs> = (data) => {
         console.log(data);
         dispatch({
             type: 'added',
@@ -44,7 +44,7 @@ const WordForm = ({ form, setForm }: WordFormProps) => {
 
                     <label htmlFor='field-wind' className={'flex items-center justify-between w-[15%] text-[#45A29E]'}>
                         <input
-                            {...register('attribute')}
+                            {...register('article')}
                             type='radio'
                             value='der'
                             id='field-wind'
@@ -53,7 +53,7 @@ const WordForm = ({ form, setForm }: WordFormProps) => {
                     </label>
                     <label htmlFor='field-wind' className={'flex items-center justify-between w-[15%] text-[#45A29E]'}>
                         <input
-                            {...register('attribute')}
+                            {...register('article')}
                             type='radio'
                             value='die'
                             id='field-wind'
@@ -62,7 +62,7 @@ const WordForm = ({ form, setForm }: WordFormProps) => {
                     </label>
                     <label htmlFor='field-wind' className={'flex items-center justify-between w-[15%] text-[#45A29E]'}>
                         <input
-                            {...register('attribute')}
+                            {...register('article')}
                             type='radio'
                             value='das'
                             id='field-wind'

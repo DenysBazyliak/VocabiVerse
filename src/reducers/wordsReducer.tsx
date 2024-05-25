@@ -9,6 +9,7 @@ export function wordsReducer(words:WordType[] , action: any) {
             return [...words, {
                 word: action.word.word,
                 translation: action.word.translation,
+                article: action.word.article,
                 id: action.id
             }];
         case 'changed':

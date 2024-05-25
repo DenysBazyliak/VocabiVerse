@@ -1,6 +1,7 @@
 export type WordType = {
     word: string;
     translation: string;
+    article: string;
     id: number;
 }
 
