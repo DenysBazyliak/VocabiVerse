@@ -35,7 +35,6 @@ const Buttons = () => {
     });
 };
 export default function Dictionary() {
-    ;
     return (
         <main className={'w-[calc(100vw-260px)] fixed right-0 '}>
             <p className={'mt-12 ml-16 text-[#66FCF1] text-5xl'}>DICTIONARY</p>
