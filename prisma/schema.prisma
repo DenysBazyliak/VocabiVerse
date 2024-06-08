@@ -1,0 +1,68 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// model user_model {
+//   id           String    @id @default(uuid())
+//   name         String
+//   email        String    @unique
+//   role         Role      @default(BASIC)
+//   isAdmin      Boolean
+//   userWords    word[]    @relation("UserWords")
+//   userSections section[] @relation("UserSections")
+
+//   // user_preferences    user_preferences? @relation(fields: [user_preferences_id], references: [id])
+//   // user_preferences_id String?           @unique
+//   @@index([email])
+// }
+
+// model user_preferences {
+//   id           String      @id @default(uuid())
+//   emailUpdates Boolean
+//   user_model   user_model?
+// }
+
+model word {
+  id          String     @id @default(uuid())
+  word        String     @unique
+  translation String
+  article     String?
+  createdAt   DateTime   @default(now())
+  upratedAt   DateTime?   @updatedAt
+  // wordSection section[]  @relation("WordSection")
+  // sectionId   String
+  // author      user_model @relation("UserWords", fields: [authorId], references: [id])
+  // authorId    String
+}
+
+// model section {
+//   id          String     @id @default(uuid())
+//   section     String     @unique
+//   createdAt   DateTime   @default(now())
+//   upratedAt   DateTime   @updatedAt
+//   wordSection word       @relation("WordSection", fields: [wordId], references: [id])
+//   wordId      String
+//   author      user_model @relation("UserSections", fields: [authorId], references: [id])
+//   authorId    String
+// }
+
+model language {
+  id       String @id @default(uuid())
+  language String
+}
+
+enum Role {
+  BASIC
+  ADMIN
+}
