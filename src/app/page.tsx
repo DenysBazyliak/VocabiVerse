@@ -1,23 +1,25 @@
-'use client';
+import db from '@/db/db';
 
-import { useContext } from 'react';
-import { WordsContext } from '@/contexts/WordsContext';
-import { WordType } from '@/types/WordTypes';
+async function getAllWords() {
+    return db.word.findMany({
+        select: {
+            word: true,
+            translation: true,
+            id: true,
+            article: true
+        }
+    });
+}
 
-const ButtonsArray = [
-    {
-        name: 'English',
-    },
-    {
-        name: 'Deutsch',
-    },
-];
-const Words = () => {
-    const words: WordType[] = useContext(WordsContext);
+const Words = async () => {
+    const words = await getAllWords()
     return words.map((word) => {
         return (
             <div key={word.id}
-                 className={' mr-6 my-4 px-6 py-4 w-[260px] h-[100px] rounded-md flex flex-col items-center justify-center bg-[#0b0c10] text-[#c5c6c7] border border-[#45A29E] transition-all duration-300 ease-in-out hover:translate-y-1 hover:scale-110'}>
+                 className={' mr-6 my-4 px-6 py-4 w-[300px] h-[100px]' +
+                     ' break-inside-avoid bg-white/20 backdrop-blur-lg backdrop-filter ' +
+                     ' bg-white shadow-[10px_10px_30px_-10px_rgb(0,0,0,0.3)] rounded-3xl ' +
+                     'flex flex-col items-center justify-center text-[#c5c6c7] border border-gray-300  transition-all duration-300 ease-in-out hover:translate-y-1 hover:scale-105'}>
                 <span>{word.word}</span>
                 <span
                     className={'truncate'}> {word.article} {word.translation.charAt(0).toUpperCase() + word.translation.slice(1)}</span>
@@ -26,23 +28,11 @@ const Words = () => {
     });
 };
 
-const Buttons = () => {
-    return ButtonsArray.map((button) => {
-        return (
-            <button key={button.name}
-                    className={' border-b-[1.3px] border-[#45A29E] text-[#66FCF1] pr-2'}>{button.name} </button>
-        );
-    });
-};
+
 export default function Dictionary() {
     return (
         <main className={'w-[calc(100vw-260px)] fixed right-0 '}>
-            <p className={'mt-12 ml-16 text-[#66FCF1] text-5xl'}>DICTIONARY</p>
-            <div className={'flex flex-row mt-4'}>
-                <span className={'pl-2 border-b-[1.3px] w-[67px] border-[#45A29E] pb-1'}></span>
-                <Buttons />
-                <button className={' border-b-[1.3px] border-[#45A29E] text-[#66FCF1] pr-1'}>+</button>
-            </div>
+            <p className={'mt-12 ml-16 bg-gradient-to-r from-[#2266e7] to-[#0a8bb7] inline-block bg-clip-text text-transparent text-[60px]'}>DICTIONARY</p>
             <div className={'flex flex-row px-[67px] flex-wrap'}>
                 <Words />
             </div>
