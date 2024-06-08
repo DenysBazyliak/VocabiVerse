@@ -9,6 +9,7 @@
     "useTabs": false,
     "requirePragma": true,
     "semi":true,
+    "plugins": ["prettier-plugin-tailwindcss"],
     "overrides": [{
         "files": ".js",
         "options": {

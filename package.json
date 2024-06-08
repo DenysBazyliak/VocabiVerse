@@ -6,13 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "devStart": "nodemon ./src/app/words/page.tsx"
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.15.10",
     "@mui/material": "^5.15.10",
+    "@prisma/adapter-pg": "^5.15.0",
     "@prisma/client": "^5.15.0",
     "colors": "^1.4.0",
     "dotenv": "^16.4.5",
@@ -21,7 +23,9 @@
     "next": "14.1.0",
     "nodemon": "^3.1.0",
     "path": "^0.12.7",
+    "pg": "^8.12.0",
     "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.6.2",
     "prisma": "^5.15.0",
     "react": "^18",
     "react-dom": "^18",
