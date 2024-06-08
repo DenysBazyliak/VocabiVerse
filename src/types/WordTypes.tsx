@@ -1,8 +1,10 @@
 export type WordType = {
     word: string;
     translation: string;
-    article: string;
-    id: number;
+    article: string | null;
+    id: string;
+    createdAt: Date;
+    updatedAt?: Date;
 }
 
 export type WordsContextType = {
