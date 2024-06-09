@@ -1,15 +1,12 @@
-'use client';
 
 import React from 'react';
-import { useContext } from 'react';
 
-import { WordsDispatchContext } from '@/contexts/WordsContext';
  type FooterProps = {
      setForm: React.Dispatch<React.SetStateAction<boolean>>,
      form: boolean
  }
 
- let nextId = 5
+
 
 function Footer({setForm, form}:FooterProps) {
 

@@ -15,12 +15,12 @@ type DrawerContentProps = {
 const content = [
     {
         name: 'Dictionary',
-        link: '/',
+        link: '/dictionary',
         icon: <MenuBookIcon className={'w-[20px]'} />,
     },
     {
         name: 'Home',
-        link: '/home',
+        link: '/',
         icon: <HomeIcon className={'w-[20px]'} />,
     },
     {

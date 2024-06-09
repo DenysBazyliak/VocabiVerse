@@ -32,7 +32,7 @@
 
 .main:after {
     content: "";
-    background-image: url("/public/images/grid.svg");
+    background-image: url("../../public/images/grid.svg");
     z-index: 1;
     position: absolute;
     width: 100%;
@@ -43,9 +43,7 @@
 }
 
 .gradient {
-    height: fit-content;
     z-index: 3;
-    width: 100%;
     max-width: 640px;
     background-image: radial-gradient(
             at 27% 37%,
