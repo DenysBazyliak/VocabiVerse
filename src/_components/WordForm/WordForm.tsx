@@ -34,7 +34,7 @@ export default function WordForm({form, setForm}: WordFormProps) {
     } = useForm<WordType>();
     const action: () => void = handleSubmit(async (data) => {
         const response = await addWord(data);
-         setForm(!form)
+        setForm(!form)
         console.log(response);
     });
 
