@@ -18,3 +18,14 @@ export async function deleteWord(wordId:string) {
     }
     await db.word.delete({ where: { id: wordId } })
 }
+
+export async function changeWord(wordId:string ,data:WordType) {
+    await db.word.update({
+        where:{ id: wordId },
+        data: {
+            word: data.word,
+            translation: data.translation,
+            article: data.article
+        },
+    })
+}

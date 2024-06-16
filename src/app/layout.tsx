@@ -25,7 +25,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <div className={'absolute bottom-0 right-0 h-[calc(100%-60px)] w-[100%]'}>
             {children}
             <Drawer />
-            {form && <WordForm form={form} setForm={setForm}/>}
+            {form && <WordForm setForm={setForm} />}
         </div>
         <Footer setForm={setForm} form={form} />
         </body>
